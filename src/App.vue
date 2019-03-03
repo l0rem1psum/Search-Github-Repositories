@@ -8,8 +8,7 @@
     </v-toolbar>
 
     <v-content>
-      <SearchBar v-on:get-users="getUsers" />
-      <router-view v-bind="props"></router-view>
+      <router-view></router-view>
     </v-content>
 
     <v-footer app dark height = 50>
@@ -20,35 +19,7 @@
 </template>
 
 <script>
-import axios from 'axios';
-import SearchBar from './components/SearchBar';
-
 export default {
-  name: 'App',
-  components: {
-    SearchBar
-  },
-  data () {
-    return {
-      resultCount: null,
-      usersList: []
-    }
-  },
-  methods:{
-    getUsers(userName){
-      axios.get(`https://api.github.com/search/users?q=${userName}`)
-        .then(response => {
-          this.resultCount = response.data.total_count;
-          this.usersList = response.data.items;
-          console.log(this.usersList);
-        })
-    }
-  },
-  computed:{
-    props(){
-      if (this.$route.name === 'results') {
-        return {usersList: this.usersList}}
-    }
-  }
+  name: 'App'
 }
 </script>

@@ -5,7 +5,7 @@
         <v-card>
           <v-list subheader>
             <v-subheader>Displaying top {{usersList.length}} result(s)</v-subheader>
-            <v-list-tile v-for="user in usersList" :key="user.id" avatar @click="temp">
+            <v-list-tile v-for="user in usersList" :key="user.id" avatar :to="{name: 'repositories', params:{userName: user.login}}">
               <v-list-tile-avatar>
                 <img :src="user.avatar_url">
               </v-list-tile-avatar>
@@ -24,12 +24,7 @@
 export default {
   name: "UsersList",
   components: {},
-  props: ["usersList"],
-  methods:{
-      temp(){
-          return true;
-      }
-  }
+  props: ["usersList"]
 };
 </script>
 
