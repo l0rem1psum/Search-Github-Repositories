@@ -6,7 +6,7 @@
           <v-text-field v-model="userName" label="Github Username" outline></v-text-field>
         </v-flex>
         <v-flex xs12>
-          <v-btn block color="secondary" dark @click="searchUsers">Search</v-btn>
+          <v-btn block color="secondary" dark @click="$emit('get-users', userName)" to="/results">Search</v-btn>
         </v-flex>
       </v-layout>
     </form>
@@ -15,15 +15,10 @@
 
 <script>
 export default {
-  name: "Search",
+  name: "SearchBar",
   data(){
       return{
-          userName: null
-      }
-  },
-  methods:{
-      searchUsers(){
-          console.log(this.userName);
+          userName: ''
       }
   }
 };
