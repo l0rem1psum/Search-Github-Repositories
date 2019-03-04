@@ -24,7 +24,7 @@ export default {
     this.userName = this.$route.params.userName;
     for (var i = 1; i < 25; i++) {
       axios
-        .get(`https://api.github.com/users/${this.userName}/repos?page=${i}`)
+        .get(`https://api.github.com/users/${this.userName}/repos?page=${i}&per_page=100`)
         .then(response => {
           if(i === 1){
             this.repositoriesList = response.data;
