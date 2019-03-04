@@ -5,6 +5,8 @@ This Vue.js app is able to search for Github users by their user names. When cli
 
 Due to time limitation, displaying more than 200 repositories for a single users is not implemented. This is also due to the consideration of speed and the overall experience.
 
+Please also visited the [Github page](https://github.com/l0rem1psum/Search-Github-Repositories) of this project
+
 The website is hosted [here](https://l0rem1psum.netlify.com). However, you can build your own version following the instructions below.
 
 ## Project setup
