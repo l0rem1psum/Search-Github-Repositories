@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import SearchResultsView from './views/SearchResultsView.vue'
 import RepositoriesView from './views/RepositoriesView.vue'
+import ReadmeView from './views/ReadmeView.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/repositories/:userName',
       name: 'repositories',
       component: RepositoriesView
+    },
+    {
+      path: '/readme/:repoName',
+      name: 'readme',
+      component: ReadmeView
     }
   ]
 })

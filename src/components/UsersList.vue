@@ -5,12 +5,17 @@
         <v-card>
           <v-list subheader>
             <v-subheader>Displaying top {{usersList.length}} result(s)</v-subheader>
-            <v-list-tile v-for="user in usersList" :key="user.id" avatar :to="{name: 'repositories', params:{userName: user.login}}">
+            <v-list-tile
+              v-for="user in usersList"
+              :key="user.id"
+              avatar
+              :to="{name: 'repositories', params:{userName: user.login}}"
+            >
               <v-list-tile-avatar>
                 <img :src="user.avatar_url">
               </v-list-tile-avatar>
               <v-list-tile-content>
-                <v-list-tile-title v-html="user.login"></v-list-tile-title>
+                <v-list-tile-title>{{user.login}}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>

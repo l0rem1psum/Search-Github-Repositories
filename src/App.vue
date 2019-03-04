@@ -11,15 +11,18 @@
       <router-view></router-view>
     </v-content>
 
-    <v-footer app dark height = 50>
+    <v-footer app dark height="50">
+      <div>&nbsp; l0rem1psum &copy; 2019</div>
       <v-spacer></v-spacer>
-      <div>l0rem1psum &copy; 2019 &nbsp;</div>
+      <v-btn flat icon color="white" to="/">
+        <v-icon>home</v-icon>
+      </v-btn>
     </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: "App"
+};
 </script>
