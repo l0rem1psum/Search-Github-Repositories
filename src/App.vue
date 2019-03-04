@@ -4,7 +4,12 @@
       <v-toolbar-title class="headline">
         <span>Search Github Repositories</span>
       </v-toolbar-title>
+
       <v-spacer></v-spacer>
+
+      <v-btn flat icon color="white" to="/">
+        <v-icon>home</v-icon>
+      </v-btn>
     </v-toolbar>
 
     <v-content>
@@ -12,11 +17,8 @@
     </v-content>
 
     <v-footer app dark height="50">
-      <div>&nbsp; l0rem1psum &copy; 2019</div>
       <v-spacer></v-spacer>
-      <v-btn flat icon color="white" to="/">
-        <v-icon>home</v-icon>
-      </v-btn>
+      <div> l0rem1psum &copy; 2019 &nbsp;</div>
     </v-footer>
   </v-app>
 </template>

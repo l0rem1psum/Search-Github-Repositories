@@ -22,12 +22,21 @@ export default {
   },
   created() {
     this.userName = this.$route.params.userName;
-    this.userRepositoryURL = `https://api.github.com/users/${
-      this.userName
-    }/repos`;
-    axios.get(this.userRepositoryURL).then(response => {
-      this.repositoriesList = response.data;
-    });
+
+    for (var i = 1; i < 100; i++) {
+      axios
+        .get(`https://api.github.com/users/${this.userName}/repos?page=${i}&per_page=100`)
+        .then(response => {
+          console.log(`https://api.github.com/users/${this.userName}/repos?page=${i}&per_page=100`);
+          if (response.data.length === 0) {
+            return;
+          }
+          this.repositoriesList = [
+            ...this.repositoriesList,
+            ...this.currentPage
+          ];
+        });
+    }
   }
 };
 </script>
