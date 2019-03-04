@@ -22,18 +22,19 @@ export default {
   },
   created() {
     this.userName = this.$route.params.userName;
-
     for (var i = 1; i < 100; i++) {
       axios
-        .get(`https://api.github.com/users/${this.userName}/repos?page=${i}&per_page=100`)
+        .get(`https://api.github.com/users/${this.userName}/repos?page=${i}`)
         .then(response => {
-          console.log(`https://api.github.com/users/${this.userName}/repos?page=${i}&per_page=100`);
+          if(i === 1){
+            this.repositoriesList = response.data;
+          }
           if (response.data.length === 0) {
-            return;
+            return
           }
           this.repositoriesList = [
             ...this.repositoriesList,
-            ...this.currentPage
+            ...response.data
           ];
         });
     }
