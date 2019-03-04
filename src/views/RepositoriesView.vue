@@ -22,7 +22,7 @@ export default {
   },
   created() {
     this.userName = this.$route.params.userName;
-    for (var i = 1; i < 100; i++) {
+    for (var i = 1; i < 25; i++) {
       axios
         .get(`https://api.github.com/users/${this.userName}/repos?page=${i}`)
         .then(response => {
