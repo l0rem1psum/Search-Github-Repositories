@@ -22,7 +22,7 @@ export default {
   },
   created() {
     this.userName = this.$route.params.userName;
-    for (var i = 1; i < 25; i++) {
+    for (var i = 1; i < 3; i++) {  // This can be changed to other value. However, set to 3 for speed and demonstration purpose.
       axios
         .get(`https://api.github.com/users/${this.userName}/repos?page=${i}&per_page=100&access_token=9cf15650e0a586a820ff9b6ec5be507af4832420`)
         .then(response => {
